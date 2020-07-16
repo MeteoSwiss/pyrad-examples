@@ -1,0 +1,119 @@
+# PRODUCT CONFIG FILE
+# Example of plotting NEXRAD level II data
+
+# List of datasets to generate.
+# The detailed specification of each dataset is given below.
+dataSetList STRARR 7
+    l0:dBZ
+    l0:ZDR
+    l0:RhoHV
+    l0:PhiDP
+    l0:V
+    l0:W
+    l1:SAVEVOL
+
+
+# ============================================================================
+#               Raw data
+# ============================================================================
+dBZ STRUCT 3
+    type STRING RAW
+    datatype STRING NEXRADII:dBZ,D{%Y-%m-%d}-F{%Y%m%d_%H%M}
+    products STRUCT 2
+        PPI STRUCT 3
+            type STRING PPI_IMAGE
+            voltype STRING dBZ
+            anglenr INT 0
+        RHI STRUCT 4
+            type STRING PSEUDORHI_IMAGE
+            voltype STRING dBZ
+            angle FLOAT 90.
+            AziTol FLOAT 0.5
+
+
+ZDR STRUCT 3
+    type STRING RAW
+    datatype STRING NEXRADII:ZDR,D{%Y-%m-%d}-F{%Y%m%d_%H%M}
+    products STRUCT 2
+        PPI STRUCT 3
+            type STRING PPI_IMAGE
+            voltype STRING ZDR
+            anglenr INT 0
+        RHI STRUCT 4
+            type STRING PSEUDORHI_IMAGE
+            voltype STRING ZDR
+            angle FLOAT 90.
+            AziTol FLOAT 0.5
+
+RhoHV STRUCT 3
+    type STRING RAW
+    datatype STRING NEXRADII:RhoHV,D{%Y-%m-%d}-F{%Y%m%d_%H%M}
+    products STRUCT 2
+        PPI STRUCT 3
+            type STRING PPI_IMAGE
+            voltype STRING RhoHV
+            anglenr INT 0
+        RHI STRUCT 4
+            type STRING PSEUDORHI_IMAGE
+            voltype STRING RhoHV
+            angle FLOAT 90.
+            AziTol FLOAT 0.5
+
+PhiDP STRUCT 3
+    type STRING RAW
+    datatype STRING NEXRADII:PhiDP,D{%Y-%m-%d}-F{%Y%m%d_%H%M}
+    products STRUCT 2
+        PPI STRUCT 3
+            type STRING PPI_IMAGE
+            voltype STRING PhiDP
+            anglenr INT 0
+        RHI STRUCT 4
+            type STRING PSEUDORHI_IMAGE
+            voltype STRING PhiDP
+            angle FLOAT 90.
+            AziTol FLOAT 0.5
+
+V STRUCT 3
+    type STRING RAW
+    datatype STRING NEXRADII:V,D{%Y-%m-%d}-F{%Y%m%d_%H%M}
+    products STRUCT 2
+        PPI STRUCT 3
+            type STRING PPI_IMAGE
+            voltype STRING V
+            anglenr INT 0
+        RHI STRUCT 4
+            type STRING PSEUDORHI_IMAGE
+            voltype STRING V
+            angle FLOAT 90.
+            AziTol FLOAT 0.5
+
+W STRUCT 3
+    type STRING RAW
+    datatype STRING NEXRADII:W,D{%Y-%m-%d}-F{%Y%m%d_%H%M}
+    products STRUCT 2
+        PPI STRUCT 3
+            type STRING PPI_IMAGE
+            voltype STRING W
+            anglenr INT 0
+        RHI STRUCT 4
+            type STRING PSEUDORHI_IMAGE
+            voltype STRING W
+            angle FLOAT 90.
+            AziTol FLOAT 0.5
+
+
+# ============================================================================
+#               Save data
+# ============================================================================
+# Save all data in the CFRadial or Odissey HDF5 format
+SAVEVOL STRUCT 3
+    type STRING NCVOL
+    datatype STRARR 1
+        NEXRADII:dBZ,D{%Y-%m-%d}-F{%Y%m%d_%H%M} # Arbitrary moment
+    products STRUCT 1
+        NC STRUCT 2
+            type  STRING SAVEALL
+            file_type STRING nc
+        H5 STRUCT 2
+            type  STRING SAVEALL
+            file_type STRING h5
