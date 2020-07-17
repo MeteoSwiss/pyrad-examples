@@ -1,0 +1,46 @@
+# PRODUCT CONFIG FILE
+# Example of reading an plotting CombiPrecip (CPC) gif files
+
+# List of datasets to generate.
+# The detailed specification of each dataset is given below.
+dataSetList STRARR 3
+    CPC0005
+    CPC0060
+    SAVEGRID
+
+
+# ============================================================================
+#               raw grid data
+# ============================================================================
+
+# CombiPrecip 5 min
+CPC0005 STRUCT 3
+    type STRING RAW_GRID
+    datatype STRING RAD4ALPGIF:CPC0005
+    products STRUCT 1
+        SURFACE STRUCT 3
+            type  STRING SURFACE_IMAGE
+            voltype STRING RR
+            level INT 0
+            
+# CombiPrecip 60 min accumulation
+CPC0060 STRUCT 3
+    type STRING RAW_GRID
+    datatype STRING RAD4ALPGIF:CPC0060
+    products STRUCT 1
+        SURFACE STRUCT 3
+            type  STRING SURFACE_IMAGE
+            voltype STRING Raccu
+            level INT 0
+
+
+# ============================================================================
+#               Save grid
+# ============================================================================
+# Save all data in NETCDF format
+SAVEGRID STRUCT 3
+    type STRING RAW_GRID
+    datatype STRING RAD4ALPGIF:CPC0005
+    products STRUCT 1
+        SAVEALL STRUCT 1
+            type STRING SAVEALL
