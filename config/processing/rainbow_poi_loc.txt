@@ -1,0 +1,18 @@
+# LOCATION CONFIG FILE
+# Example of reading an plotting Rainbow point of interest (staring mode) files
+
+# Radar Name
+RadarName STRING DX50
+
+# Names of the radar scans in the specified sector
+# NOTE: Must have a trailing '/'
+ScanList STRARR 1
+      MALS_TOR_POINT_TEST.poi/  # masterscan: first scan of a volume
+
+# Repetition time of the scans [min]
+ScanPeriod INT 10
+
+# Image config
+ppiImageConfig STRUCT 2
+   xsize      FLOAT  10.      # image size [inches] (default dots per inch (dpi):72)
+   ysize      FLOAT   8.      # image size [inches] (default dots per inch (dpi):72)

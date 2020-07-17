@@ -1,20 +1,20 @@
 # MAIN CONFIG FILE
-# Example of reading an plotting CombiPrecip (CPC) gif files
+# Example of reading an plotting Rainbow point of interest (staring mode) files
 
 # IMPORTANT: Adapt the paths to the actual location of your data and config files
 
 # call example:
 # If imported from source:
 # cd $HOME/pyrad/src/pyrad_proc/scripts/
-# python main_process_data.py cpc_gif.txt --starttime 20170801170000 --endtime 20170801170100 --cfgpath $HOME/pyrad-examples/config/processing/
+# python main_process_data.py rainbow_poi.txt --starttime 20191015093500 --endtime 20191015094000 --cfgpath $HOME/pyrad-examples/config/processing/
 #
 # If used as a software package:
-# main_process_data.py cpc_gif.txt --starttime 20170801170000 --endtime 20170801170100 --cfgpath $HOME/pyrad-examples/config/processing/
+# main_process_data.py rainbow_poi.txt --starttime 20191015093500 --endtime 20191015094000 --cfgpath $HOME/pyrad-examples/config/processing/
 
 
 # Name of this configuration:
 # Will be used in product generation save path
-name STRING CPC_GIF
+name STRING RAINBOW_POI
 
 # ---------------------------------------------------------
 #  Raw data pathes
@@ -23,18 +23,17 @@ name STRING CPC_GIF
 # Base path of the raw data.
 # Note: Must have a trailing '/'
 # ('<datapath>/<scanname>/<YYYY-MM-DD>/<YYYYMMDDHHMMSS00datatype>.<ext>')
-datapath STRING $HOME/pyrad-examples/input_data/CPC_GIF/
-metranet_read_lib STRING python
+datapath STRING $HOME/pyrad-examples/input_data/RAINBOW/
 
 # Loading of saved datasets
-loadbasepath STRING $HOME/pyrad-examples/pyrad_products_test/
-loadname STRING  CPC_GIF
+loadbasepath STRING $HOME/pyrad-examples/pyrad_products_ref/
+loadname STRING RAINBOW_POI
 
 
 # --------------------------------------------
 # Output data
-# --------------------------------------------
-saveimgbasepath STRING $HOME/pyrad-examples/pyrad_products_test/
+# -----------------------------------------------
+saveimgbasepath STRING $HOME/pyrad-examples/pyrad_products_ref/
 
 # Output image format can be any accepted by Matplotlib
 # More than one output formats can be set
@@ -49,8 +48,8 @@ imgformat STRARR 1
 configpath STRING $HOME/pyrad-examples/config/
 
 # Configuration of the radar location and approach direction
-locationConfigFile STRING $HOME/pyrad-examples/config/processing/cpc_gif_loc.txt
+locationConfigFile STRING $HOME/pyrad-examples/config/processing/rainbow_poi_loc.txt
 
 # Configuration of the product generation
-productConfigFile STRING $HOME/pyrad-examples/config/processing/cpc_gif_prod.txt
+productConfigFile STRING $HOME/pyrad-examples/config/processing/rainbow_poi_prod.txt
 
