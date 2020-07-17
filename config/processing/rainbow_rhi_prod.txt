@@ -1,0 +1,183 @@
+# PRODUCT CONFIG FILE
+# Example of reading an plotting Rainbow RHI scan files
+
+# List of datasets to generate.
+# The detailed specification of each dataset is given below.
+dataSetList STRARR 7
+    dBZ
+    ZDR
+    RhoHV
+    PhiDP
+    V
+    W
+    AZI_AVG
+
+
+# ============================================================================
+#               Raw data
+# ============================================================================
+dBZ STRUCT 3
+    type STRING RAW
+    datatype STRING dBZ
+    products STRUCT 4
+        AZ270 STRUCT 3
+            type  STRING RHI_IMAGE
+            anglenr INT 4
+            voltype STRING dBZ
+        AZ274 STRUCT 3
+            type  STRING RHI_IMAGE
+            anglenr INT 6
+            voltype STRING dBZ
+        AZ278 STRUCT 3
+            type  STRING RHI_IMAGE
+            anglenr INT 8
+            voltype STRING dBZ
+        EL06 STRUCT 4
+            type  STRING PSEUDOPPI_IMAGE
+            angle FLOAT 6.
+            EleTol FLOAT 1.
+            voltype STRING dBZ
+
+ZDR STRUCT 3
+    type STRING RAW
+    datatype STRING ZDR
+    products STRUCT 4
+        AZ270 STRUCT 3
+            type  STRING RHI_IMAGE
+            anglenr INT 4
+            voltype STRING ZDR
+        AZ274 STRUCT 3
+            type  STRING RHI_IMAGE
+            anglenr INT 6
+            voltype STRING ZDR
+        AZ278 STRUCT 3
+            type  STRING RHI_IMAGE
+            anglenr INT 8
+            voltype STRING ZDR
+        EL06 STRUCT 4
+            type  STRING PSEUDOPPI_IMAGE
+            angle FLOAT 6.
+            EleTol FLOAT 1.
+            voltype STRING ZDR
+
+RhoHV STRUCT 3
+    type STRING RAW
+    datatype STRING RhoHV
+    products STRUCT 4
+        AZ270 STRUCT 3
+            type  STRING RHI_IMAGE
+            anglenr INT 4
+            voltype STRING RhoHV
+        AZ274 STRUCT 3
+            type  STRING RHI_IMAGE
+            anglenr INT 6
+            voltype STRING RhoHV
+        AZ278 STRUCT 3
+            type  STRING RHI_IMAGE
+            anglenr INT 8
+            voltype STRING RhoHV
+        EL06 STRUCT 4
+            type  STRING PSEUDOPPI_IMAGE
+            angle FLOAT 6.
+            EleTol FLOAT 1.
+            voltype STRING RhoHV
+
+PhiDP STRUCT 3
+    type STRING RAW
+    datatype STRING PhiDP
+    products STRUCT 4
+        AZ270 STRUCT 3
+            type  STRING RHI_IMAGE
+            anglenr INT 4
+            voltype STRING PhiDP
+        AZ274 STRUCT 3
+            type  STRING RHI_IMAGE
+            anglenr INT 6
+            voltype STRING PhiDP
+        AZ278 STRUCT 3
+            type  STRING RHI_IMAGE
+            anglenr INT 8
+            voltype STRING PhiDP
+        EL06 STRUCT 4
+            type  STRING PSEUDOPPI_IMAGE
+            angle FLOAT 6.
+            EleTol FLOAT 1.
+            voltype STRING PhiDP
+
+V STRUCT 3
+    type STRING RAW
+    datatype STRING V
+    products STRUCT 4
+        AZ270 STRUCT 3
+            type  STRING RHI_IMAGE
+            anglenr INT 4
+            voltype STRING V
+        AZ274 STRUCT 3
+            type  STRING RHI_IMAGE
+            anglenr INT 6
+            voltype STRING V
+        AZ278 STRUCT 3
+            type  STRING RHI_IMAGE
+            anglenr INT 8
+            voltype STRING V
+        EL06 STRUCT 4
+            type  STRING PSEUDOPPI_IMAGE
+            angle FLOAT 6.
+            EleTol FLOAT 1.
+            voltype STRING V
+
+W STRUCT 3
+    type STRING RAW
+    datatype STRING W
+    products STRUCT 4
+        AZ270 STRUCT 3
+            type  STRING RHI_IMAGE
+            anglenr INT 4
+            voltype STRING W
+        AZ274 STRUCT 3
+            type  STRING RHI_IMAGE
+            anglenr INT 6
+            voltype STRING W
+        AZ278 STRUCT 3
+            type  STRING RHI_IMAGE
+            anglenr INT 8
+            voltype STRING W
+        EL06 STRUCT 4
+            type  STRING PSEUDOPPI_IMAGE
+            angle FLOAT 6.
+            EleTol FLOAT 1.
+            voltype STRING W
+
+
+# ============================================================================
+#               Azimuthal average
+# ============================================================================
+
+# Azimuthal mean centered at 274 with an angle span of +-6
+AZI_AVG STRUCT 6
+    type STRING AZI_AVG
+    datatype STRARR 4
+        dBZ
+        ZDR
+        RhoHV
+        PhiDP
+    angle FLOAT 274.
+    delta_azi FLOAT 12.
+    avg_type STRING mean
+    products STRUCT 4
+        AVG_dBZ STRUCT 3
+            type  STRING RHI_IMAGE
+            anglenr INT 0
+            voltype STRING dBZ
+        AVG_ZDR STRUCT 3
+            type  STRING RHI_IMAGE
+            anglenr INT 0
+            voltype STRING ZDR
+        AVG_RhoHV STRUCT 3
+            type  STRING RHI_IMAGE
+            anglenr INT 0
+            voltype STRING RhoHV
+        AVG_PhiDP STRUCT 3
+            type  STRING RHI_IMAGE
+            anglenr INT 0
+            voltype STRING PhiDP
