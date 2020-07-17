@@ -22,7 +22,6 @@ name STRING NEXRAD2
 
 # Base path of the raw data.
 # Note: Must have a trailing '/'
-# ('<datapath>/<scanname>/<YYYY-MM-DD>/<YYYYMMDDHHMMSS00datatype>.<ext>')
 datapath STRING $HOME/pyrad-examples/input_data/NEXRAD2/KATX/
 path_convention STRING ODIM
 

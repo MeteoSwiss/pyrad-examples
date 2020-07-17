@@ -1,0 +1,48 @@
+# LOCATION CONFIG FILE
+# Example of plotting METRANET Cartesian data
+
+# cropping of the grid
+# uncomment to reduce the area of the input file
+# latmin FLOAT 47.5
+# latmax FLOAT 48.
+# lonmin FLOAT 9.
+# lonmax FLOAT 10.
+
+
+# Repetition time of the scans [min]
+ScanPeriod FLOAT 2.5
+
+
+# Image config
+gridMapImageConfig STRUCT 12
+   xsize      FLOAT  10. # image size [inches] (default dots per inch (dpi):72)
+   ysize      FLOAT  8.  # image size [inches] (default dots per inch (dpi):72)
+   lonmin     FLOAT  8.  # Min longitude [deg]
+   lonmax     FLOAT  10. # Max longitude [deg]
+   lonstep    FLOAT 0.5
+   latmin     FLOAT 47.  # Min latitude [deg]
+   latmax     FLOAT 48.  # Max latitude [deg]
+   latstep    FLOAT 0.5
+   mapres     STRING 10m # cartopy map resolution (10m, 50m, 110m)
+   background_zoom INT 8
+   dpi        INT    72     # dots per inch (72 web quality, 300 print quality)
+   maps STRARR 6        # maps to overplot (cartopy)
+       countries
+       provinces
+       lakes
+       lakes_europe
+       rivers
+       rivers_europe
+#       urban_areas
+#       roads
+#       railroads
+#       coastlines
+#       lakes
+#       lakes_europe
+#       rivers
+#       rivers_europe
+#       relief
+#       populated_places
+
+# basemap mapres: c (crude), l (low), i (intermediate), h (high), f (full)
+# cartopy mapres: '110m', '50m', '10m'

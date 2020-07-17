@@ -1,0 +1,69 @@
+# PRODUCT CONFIG FILE
+# Example of plotting METRANET Cartesian data
+
+# List of datasets to generate.
+# The detailed specification of each dataset is given below.
+dataSetList STRARR 4
+    RZC
+    POH
+    RZC_POH
+    SAVEGRID
+
+
+# ============================================================================
+#               raw grid data
+# ============================================================================
+
+# Rainfall rate derived from Z-R relationships in Cartesian coordinates
+RZC STRUCT 3
+    type STRING RAW_GRID
+    datatype STRING RAD4ALPGRID:RZC
+    products STRUCT 2
+        SURFACE STRUCT 3
+            type  STRING SURFACE_IMAGE
+            voltype STRING RR
+            level INT 0
+        HISTOGRAM STRUCT 4
+            type STRING HISTOGRAM
+            voltype STRING RR
+            mask_val FLOAT 0.03526497
+            write_data INT 1
+
+# Probability of hail
+POH STRUCT 3
+    type STRING RAW_GRID
+    datatype STRING RAD4ALPGRID:BZC
+    products STRUCT 1
+        SURFACE STRUCT 3
+            type  STRING SURFACE_IMAGE
+            voltype STRING POH
+            level INT 0
+
+# Rainfall rate with POH 80% contours over-plotted
+RZC_POH STRUCT 3
+    type STRING RAW_GRID
+    datatype STRARR 2
+        RAD4ALPGRID:RZC
+        RAD4ALPGRID:BZC
+    products STRUCT 1
+        SURFACE_CONTOUR STRUCT 5
+            type  STRING SURFACE_CONTOUR_OVERPLOT
+            voltype STRING RR
+            contourtype STRING POH
+            level INT 0
+            contour_values FLTARR 1
+                80.
+
+
+# ============================================================================
+#               Save grid
+# ============================================================================
+# Save all data in NETCDF format
+SAVEGRID STRUCT 3
+    type STRING RAW_GRID
+    datatype STRARR 2
+        RAD4ALPGRID:RZC
+        RAD4ALPGRID:BZC
+    products STRUCT 1
+        SAVEALL STRUCT 1
+            type STRING SAVEALL
