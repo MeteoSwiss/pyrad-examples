@@ -1,0 +1,33 @@
+# LOCATION CONFIG FILE
+# Example of reading an plotting Rainbow volume scan files
+
+# Radar Name
+RadarName STRING DX50
+
+# Names of the radar scans in the specified sector
+# NOTE: Must have a trailing '/'
+ScanList STRARR 1
+    RADAR001:MALS_TOR_VOL.vol/  # masterscan: first scan of a volume
+
+# elevation angles: 0, 1.3, 2.9, 4.9, 7.3, 10.2, 13.8, 18.2, 23.5, 30.
+ 
+    
+# Repetition time of the scans [min]
+ScanPeriod INT 10
+
+# Image config
+ppiImageConfig STRUCT 6
+   xsize      FLOAT  10.   # image size [inches] (default dots per inch (dpi):72)
+   ysize      FLOAT   8.   # image size [inches] (default dots per inch (dpi):72)
+   xmin       FLOAT -70.0  # Min distance on horizontal axis [km]
+   xmax       FLOAT  70.0  # Max distance on horizontal axis [km]
+   ymin       FLOAT -70.0  # Min distance on vertical axis [km]
+   ymax       FLOAT  70.0  # Max distance on vertical axis [km]
+
+rhiImageConfig STRUCT 6
+   xsize      FLOAT  10.     # image size [inches]
+   ysize      FLOAT   6.     # image size [inches]
+   xmin       FLOAT -60.0   # Min distance on horizontal axis [km]
+   xmax       FLOAT   0.0   # Max distance on horizontal axis [km]
+   ymin       FLOAT   0.0   # Min distance on vertical axis [km]
+   ymax       FLOAT  10.0   # Max distance on vertical axis [km]

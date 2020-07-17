@@ -1,0 +1,151 @@
+# PRODUCT CONFIG FILE
+# Example of reading an plotting Rainbow volume scan files
+
+# List of datasets to generate.
+# The detailed specification of each dataset is given below.
+dataSetList STRARR 7
+    dBZ
+    ZDR
+    RhoHV
+    PhiDP
+    KDP
+    V
+    W
+
+
+# ============================================================================
+#               Raw data
+# ============================================================================
+dBZ STRUCT 3
+    type STRING RAW
+    datatype STRING dBZ
+    products STRUCT 5
+        EL02_9 STRUCT 3
+            type  STRING PPI_IMAGE
+            anglenr INT 2
+            voltype STRING dBZ
+        EL30_0 STRUCT 3
+            type  STRING PPI_IMAGE
+            anglenr INT 9
+            voltype STRING dBZ
+        AZ270_0 STRUCT 4
+            type  STRING PSEUDORHI_IMAGE
+            angle FLOAT 270.
+            AziTol FLOAT 1.
+            voltype STRING dBZ
+        ALT2000 STRUCT 3
+            type STRING CAPPI_IMAGE
+            altitude FLOAT 2000
+            voltype STRING dBZ
+        BSCOPE_EL02_9 STRUCT 3
+            type STRING BSCOPE_IMAGE
+            anglenr INT 2
+            voltype STRING dBZ
+
+ZDR STRUCT 3
+    type STRING RAW
+    datatype STRING ZDR
+    products STRUCT 3
+        EL02_9 STRUCT 3
+            type  STRING PPI_IMAGE
+            anglenr INT 2
+            voltype STRING ZDR
+        EL30_0 STRUCT 3
+            type  STRING PPI_IMAGE
+            anglenr INT 9
+            voltype STRING ZDR
+       AZ270_0 STRUCT 4
+            type  STRING PSEUDORHI_IMAGE
+            angle FLOAT 270.
+            AziTol FLOAT 1.
+            voltype STRING ZDR
+
+RhoHV STRUCT 3
+    type STRING RAW
+    datatype STRING RhoHV
+    products STRUCT 3
+        EL02_9 STRUCT 3
+            type  STRING PPI_IMAGE
+            anglenr INT 2
+            voltype STRING RhoHV
+        EL30_0 STRUCT 3
+            type  STRING PPI_IMAGE
+            anglenr INT 9
+            voltype STRING RhoHV
+        AZ270_0 STRUCT 4
+            type  STRING PSEUDORHI_IMAGE
+            angle FLOAT 270.
+            AziTol FLOAT 1.
+            voltype STRING RhoHV
+
+PhiDP STRUCT 3
+    type STRING RAW
+    datatype STRING PhiDP
+    products STRUCT 3
+        EL02_9 STRUCT 3
+            type  STRING PPI_IMAGE
+            anglenr INT 2
+            voltype STRING PhiDP
+        EL30_0 STRUCT 3
+            type  STRING PPI_IMAGE
+            anglenr INT 9
+            voltype STRING PhiDP
+        AZ270_0 STRUCT 4
+            type  STRING PSEUDORHI_IMAGE
+            angle FLOAT 270.
+            AziTol FLOAT 1.
+            voltype STRING PhiDP
+
+KDP STRUCT 3
+    type STRING RAW
+    datatype STRING KDP
+    products STRUCT 3
+        EL02_9 STRUCT 3
+            type  STRING PPI_IMAGE
+            anglenr INT 2
+            voltype STRING KDP
+        EL30_0 STRUCT 3
+            type  STRING PPI_IMAGE
+            anglenr INT 9
+            voltype STRING KDP
+        AZ270_0 STRUCT 4
+            type  STRING PSEUDORHI_IMAGE
+            angle FLOAT 270.
+            AziTol FLOAT 1.
+            voltype STRING KDP
+
+V STRUCT 3
+    type STRING RAW
+    datatype STRING V
+    products STRUCT 3
+        EL02_9 STRUCT 3
+            type  STRING PPI_IMAGE
+            anglenr INT 2
+            voltype STRING V
+        EL30_0 STRUCT 3
+            type  STRING PPI_IMAGE
+            anglenr INT 9
+            voltype STRING V
+        AZ270_0 STRUCT 4
+            type  STRING PSEUDORHI_IMAGE
+            angle FLOAT 270.
+            AziTol FLOAT 1.
+            voltype STRING V
+
+W STRUCT 3
+    type STRING RAW
+    datatype STRING W
+    products STRUCT 3
+        EL02_9 STRUCT 3
+            type  STRING PPI_IMAGE
+            anglenr INT 2
+            voltype STRING W
+        EL30_0 STRUCT 3
+            type  STRING PPI_IMAGE
+            anglenr INT 9
+            voltype STRING W
+        AZ270_0 STRUCT 4
+            type  STRING PSEUDORHI_IMAGE
+            angle FLOAT 270.
+            AziTol FLOAT 1.
+            voltype STRING W
