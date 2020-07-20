@@ -1,0 +1,116 @@
+# PRODUCT CONFIG FILE
+# Example of reading an plotting PSR files
+# This is spectral data collected in staring mode
+
+# List of datasets to generate.
+# The detailed specification of each dataset is given below.
+dataSetList STRARR 6
+    l0:sdBuZ
+    l0:sdBuZv
+    l0:sZDRu
+    l0:sPhiDPu
+    l0:sRhoHVu
+    l1:POI_TS
+
+# ============================================================================
+#                 retrieved spectral data
+# ============================================================================
+
+# Spectral horizontal reflectivity
+sdBuZ STRUCT 4
+    type STRING SPECTRAL_REFLECTIVITY
+    datatype STRING PSRSPECTRA:ShhADUu
+    MAKE_GLOBAL INT 1
+    products STRUCT 1
+        AZ338_9_EL003_6 STRUCT 4
+            type  STRING RANGE_DOPPLER
+            azi FLOAT 338.9
+            ele FLOAT 3.6
+            voltype STRING sdBuZ
+
+# Spectral vertical reflectivity
+sdBuZv STRUCT 4
+    type STRING SPECTRAL_REFLECTIVITY
+    datatype STRING PSRSPECTRA:SvvADUu
+    MAKE_GLOBAL INT 1
+    products STRUCT 1
+        AZ338_9_EL003_6 STRUCT 4
+            type  STRING RANGE_DOPPLER
+            azi FLOAT 338.9
+            ele FLOAT 3.6
+            voltype STRING sdBuZv
+
+# Spectral differential reflectivity
+sZDRu STRUCT 4
+    type STRING sZDR
+    datatype STRARR 2
+        PSRSPECTRA:ShhADUu
+        PSRSPECTRA:SvvADUu
+    MAKE_GLOBAL INT 1
+    products STRUCT 1
+        AZ338_9_EL003_6 STRUCT 4
+            type  STRING RANGE_DOPPLER
+            azi FLOAT 338.9
+            ele FLOAT 3.6
+            voltype STRING sZDRu
+
+# Spectral differential phase
+sPhiDPu STRUCT 4
+    type STRING sPhiDP
+    datatype STRARR 2
+        PSRSPECTRA:ShhADUu
+        PSRSPECTRA:SvvADUu
+    MAKE_GLOBAL INT 1
+    products STRUCT 1
+        AZ338_9_EL003_6 STRUCT 4
+            type  STRING RANGE_DOPPLER
+            azi FLOAT 338.9
+            ele FLOAT 3.6
+            voltype STRING sPhiDPu
+
+# Spectral co-polar correlation coefficient
+sRhoHVu STRUCT 4
+    type STRING sRhoHV
+    datatype STRARR 2
+        PSRSPECTRA:ShhADUu
+        PSRSPECTRA:SvvADUu
+    MAKE_GLOBAL INT 1
+    products STRUCT 1
+        AZ338_9_EL003_6 STRUCT 4
+            type  STRING AMPLITUDE_PHASE_RANGE_DOPPLER
+            azi FLOAT 338.9
+            ele FLOAT 3.6
+            voltype STRING sRhoHVu
+
+
+# ==========================================================================================
+#       Time series of spectra at POI
+# ==========================================================================================
+POI_TS STRUCT 11
+    type STRING SPECTRA_POINT
+    datatype STRARR 2
+        PROC:sdBuZ
+        PROC:sdBuZv
+    latlon INT 0
+    single_point INT 0
+    rng FLOAT 7740.
+    azi FLOAT 338.9
+    ele FLOAT 3.6
+    AziTol FLOAT 1.
+    EleTol FLOAT 1.
+    RngTol FLOAT 30.
+    products STRUCT 2
+        sdBuZ_zoom STRUCT 6
+            type  STRING TIME_DOPPLER
+            voltype STRING sdBuZ
+            vmin FLOAT 0.
+            vmax FLOAT 75.
+            ymin FLOAT 0.   # Plot only the first 30s
+            ymax FLOAT 30.
+        sdBuZv_zoom STRUCT 6
+            type  STRING TIME_DOPPLER
+            voltype STRING sdBuZv
+            vmin FLOAT 0.
+            vmax FLOAT 75.
+            ymin FLOAT 0.  # Plot only the first 30s
+            ymax FLOAT 30.
