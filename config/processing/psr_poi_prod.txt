@@ -88,9 +88,12 @@ sRhoHVu STRUCT 4
 # ==========================================================================================
 POI_TS STRUCT 11
     type STRING SPECTRA_POINT
-    datatype STRARR 2
+    datatype STRARR 5
         PROC:sdBuZ
         PROC:sdBuZv
+        PROC:sZDRu
+        PROC:sPhiDPu
+        PROC:sRhoHVu
     latlon INT 0
     single_point INT 0
     rng FLOAT 7740.
@@ -99,7 +102,7 @@ POI_TS STRUCT 11
     AziTol FLOAT 1.
     EleTol FLOAT 1.
     RngTol FLOAT 30.
-    products STRUCT 2
+    products STRUCT 5
         sdBuZ_zoom STRUCT 6
             type  STRING TIME_DOPPLER
             voltype STRING sdBuZ
@@ -112,5 +115,22 @@ POI_TS STRUCT 11
             voltype STRING sdBuZv
             vmin FLOAT 0.
             vmax FLOAT 75.
+            ymin FLOAT 0.  # Plot only the first 30s
+            ymax FLOAT 30.
+        sZDRu_zoom STRUCT 6
+            type  STRING TIME_DOPPLER
+            voltype STRING sZDRu
+            vmin FLOAT -8.
+            vmax FLOAT 8.
+            ymin FLOAT 0.  # Plot only the first 30s
+            ymax FLOAT 30.
+        sPhiDPu_zoom STRUCT 4
+            type  STRING TIME_DOPPLER
+            voltype STRING sPhiDPu
+            ymin FLOAT 0.  # Plot only the first 30s
+            ymax FLOAT 30.
+        sRhoHVu_zoom STRUCT 4
+            type  STRING AMPLITUDE_PHASE_TIME_DOPPLER
+            voltype STRING sRhoHVu
             ymin FLOAT 0.  # Plot only the first 30s
             ymax FLOAT 30.
