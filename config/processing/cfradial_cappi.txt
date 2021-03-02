@@ -1,0 +1,49 @@
+# MAIN CONFIG FILE
+# Example of plotting a CAPPI of data read from a CFRadial file
+
+# IMPORTANT: Adapt the paths to the actual location of your data and config files
+
+# call example:
+# If imported from source:
+# cd $HOME/pyrad/src/pyrad_proc/scripts/
+# python main_process_data.py cfradial_cappi.txt --starttime 20210114000000 --endtime 20210114000000 --cfgpath $HOME/pyrad-examples/config/processing/
+#
+# If used as a software package:
+# main_process_data.py cfradial_cappi.txt --starttime 20210114000000 --endtime 20210114000000 --cfgpath $HOME/pyrad-examples/config/processing/
+
+
+# Name of this configuration:
+# Will be used in product generation save path
+name STRING CFRADIAL
+
+# ---------------------------------------------------------
+#  Raw data pathes
+# ---------------------------------------------------------
+
+# Loading of saved datasets
+loadbasepath STRING $HOME/pyrad-examples/input_data/
+loadname STRING CFRADIAL
+
+
+# --------------------------------------------
+# Output data
+# -----------------------------------------------
+saveimgbasepath STRING $HOME/pyrad-examples/pyrad_products_test/
+
+# Output image format can be any accepted by Matplotlib
+# More than one output formats can be set
+imgformat STRARR 1
+    png
+
+# --------------------------------------------------------
+# configuration files pathes
+# --------------------------------------------------------
+
+# Base path of configuration files
+configpath STRING $HOME/pyrad-examples/config/
+
+# Configuration of the radar location and approach direction
+locationConfigFile STRING $HOME/pyrad-examples/config/processing/cfradial_cappi_loc.txt
+
+# Configuration of the product generation
+productConfigFile STRING $HOME/pyrad-examples/config/processing/cfradial_cappi_prod.txt
