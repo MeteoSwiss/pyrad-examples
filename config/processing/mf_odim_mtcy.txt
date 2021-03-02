@@ -1,0 +1,56 @@
+# MAIN CONFIG FILE
+# Example of plotting MF ODIM data
+
+# IMPORTANT: Adapt the paths to the actual location of your data and config files
+
+# call example:
+# If imported from source:
+# cd $HOME/pyrad/src/pyrad_proc/scripts/
+# python main_process_data.py mf_odim_mtcy.txt --starttime 20210114000000 --endtime 20210114000000 --cfgpath $HOME/pyrad-examples/config/processing/
+#
+# If used as a software package:
+# main_process_data.py mf_odim_mtcy.txt --starttime 20210114000000 --endtime 20210114000000 --cfgpath $HOME/pyrad-examples/config/processing/
+
+# Name of this configuration:
+# Will be used in product generation save path
+name STRING MF_ODIM_MTCY
+
+# ---------------------------------------------------------
+#  Raw data pathes
+# ---------------------------------------------------------
+
+# Base path of the raw data.
+# Note: Must have a trailing '/'
+datapath STRING $HOME/pyrad-examples/input_data/MF_ODIM/
+path_convention STRING ODIM
+
+# NWP path
+cosmopath STRING $HOME/pyrad-examples/input_data/MF_ISO0/
+
+# Loading of saved datasets
+loadbasepath STRING STRING HOME/pyrad-examples/pyrad_products_test/
+loadname STRING MF_ODIM_MTCY
+
+
+# --------------------------------------------
+# Output data
+# -----------------------------------------------
+saveimgbasepath STRING $HOME/pyrad-examples/pyrad_products_test/
+
+# Output image format can be any accepted by Matplotlib
+# More than one output formats can be set
+imgformat STRARR 1
+    png
+
+# --------------------------------------------------------
+# configuration files pathes
+# --------------------------------------------------------
+
+# Base path of configuration files
+configpath STRING $HOME/pyrad-examples/config/
+
+# Configuration of the radar location and approach direction
+locationConfigFile STRING $HOME/pyrad-examples/config/processing/mf_odim_mtcy_loc.txt
+
+# Configuration of the product generation
+productConfigFile STRING $HOME/pyrad-examples/config/processing/mf_odim_mtcy_prod.txt
