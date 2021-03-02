@@ -1,0 +1,70 @@
+# PRODUCT CONFIG FILE
+# Example of plotting MF PAG data in C/FRadial
+
+# List of datasets to generate.
+# The detailed specification of each dataset is given below.
+dataSetList STRARR 4
+	dBuZ
+    V
+    sigma
+    SAVEVOL
+
+
+# ============================================================================
+#               Raw data
+# ============================================================================
+dBuZ STRUCT 3
+    type STRING RAW
+    datatype STRING MFCFRADIAL:dBuZ,D{%Y-%m-%d}-F{%Y%m%d%H%M}
+    products STRUCT 2
+        PPI_EL00 STRUCT 3
+            type STRING PPI_IMAGE
+            voltype STRING dBuZ
+            anglenr INT 0
+		PPI_EL03 STRUCT 3
+            type STRING PPI_IMAGE
+            voltype STRING dBuZ
+            anglenr INT 3
+
+V STRUCT 3
+    type STRING RAW
+    datatype STRING MFCFRADIAL:V,D{%Y-%m-%d}-F{%Y%m%d%H%M}
+    products STRUCT 2
+        PPI_EL00 STRUCT 3
+            type STRING PPI_IMAGE
+            voltype STRING V
+            anglenr INT 0
+		PPI_EL03 STRUCT 3
+            type STRING PPI_IMAGE
+            voltype STRING V
+            anglenr INT 3
+
+sigma STRUCT 3
+    type STRING RAW
+    datatype STRING MFCFRADIAL:sigma_zh,D{%Y-%m-%d}-F{%Y%m%d%H%M}
+    products STRUCT 2
+        PPI_EL00 STRUCT 3
+            type STRING PPI_IMAGE
+            voltype STRING sigma_zh
+            anglenr INT 0
+		PPI_EL03 STRUCT 3
+            type STRING PPI_IMAGE
+            voltype STRING sigma_zh
+            anglenr INT 3
+
+
+# ============================================================================
+#               Save data
+# ============================================================================
+# Save all data in the CFRadial or Odissey HDF5 format
+SAVEVOL STRUCT 3
+    type STRING NCVOL
+    datatype STRARR 1
+        MFCFRADIAL:dBuZ,D{%Y-%m-%d}-F{%Y%m%d%H%M} # Arbitrary moment
+    products STRUCT 1
+        NC STRUCT 2
+            type  STRING SAVEALL
+            file_type STRING nc
+        H5 STRUCT 2
+            type  STRING SAVEALL
+            file_type STRING h5
