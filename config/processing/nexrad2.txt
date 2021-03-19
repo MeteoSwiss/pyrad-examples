@@ -6,10 +6,10 @@
 # call example:
 # If imported from source:
 # cd $HOME/pyrad/src/pyrad_proc/scripts/
-# python main_process_data.py nexrad2.txt --starttime 20130717195000 --endtime 20130717195500 --cfgpath $HOME/pyrad-examples/config/processing/
+# python main_process_data.py nexrad2.txt --starttime 20130717195000 --endtime 20130717195500 --cfgpath ${PYRAD_EXAMPLES_PATH}/config/processing/
 #
 # If used as a software package:
-# main_process_data.py nexrad2.txt --starttime 20130717195000 --endtime 20130717195500 --cfgpath $HOME/pyrad-examples/config/processing/
+# main_process_data.py nexrad2.txt --starttime 20130717195000 --endtime 20130717195500 --cfgpath ${PYRAD_EXAMPLES_PATH}/config/processing/
 
 
 # Name of this configuration:
@@ -22,18 +22,18 @@ name STRING NEXRAD2
 
 # Base path of the raw data.
 # Note: Must have a trailing '/'
-datapath STRING $HOME/pyrad-examples/input_data/NEXRAD2/KATX/
+datapath STRING ${PYRAD_EXAMPLES_PATH}/input_data/NEXRAD2/KATX/
 path_convention STRING ODIM
 
 # Loading of saved datasets
-loadbasepath STRING STRING $HOME/pyrad-examples/pyrad_products_test/
+loadbasepath STRING STRING ${PYRAD_EXAMPLES_PATH}/pyrad_products_test/
 loadname STRING NEXRAD2
 
 
 # --------------------------------------------
 # Output data
 # -----------------------------------------------
-saveimgbasepath STRING $HOME/pyrad-examples/pyrad_products_test/
+saveimgbasepath STRING ${PYRAD_EXAMPLES_PATH}/pyrad_products_test/
 
 # Output image format can be any accepted by Matplotlib
 # More than one output formats can be set
@@ -45,10 +45,10 @@ imgformat STRARR 1
 # --------------------------------------------------------
 
 # Base path of configuration files
-configpath STRING $HOME/pyrad-examples/config/
+configpath STRING ${PYRAD_EXAMPLES_PATH}/config/
 
 # Configuration of the radar location and approach direction
-locationConfigFile STRING $HOME/pyrad-examples/config/processing/nexrad2_loc.txt
+locationConfigFile STRING ${PYRAD_EXAMPLES_PATH}/config/processing/nexrad2_loc.txt
 
 # Configuration of the product generation
-productConfigFile STRING $HOME/pyrad-examples/config/processing/nexrad2_prod.txt
+productConfigFile STRING ${PYRAD_EXAMPLES_PATH}/config/processing/nexrad2_prod.txt
