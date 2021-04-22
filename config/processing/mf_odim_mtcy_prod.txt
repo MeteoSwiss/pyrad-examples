@@ -160,7 +160,7 @@ hydro_semisupervised STRUCT 9
         ODIM:KDP,D{%Y%m%d????00}-F{%Y%m%d%H%M00}
         PROC:H_ISO0
     HYDRO_METHOD STRING SEMISUPERVISED
-    RADARCENTROIDS STRING D
+    centroids_file STRING centroids_D.csv
     compute_entropy INT 0
     output_distances INT 0
 	vectorize INT 1
