@@ -9,19 +9,19 @@ name STRING rad4alp_hydro_PLL
 # Base path of the raw data.
 # Note: Must have a trailing '/'
 # ('<datapath>/<scanname>/<YYYY-MM-DD>/<YYYYMMDDHHMMSS00datatype>.<ext>')
-datapath STRING $HOME/pyrad-examples/input_data/MCH_HYDRO/
+datapath STRING ${PYRAD_EXAMPLES_PATH}/input_data/MCH_HYDRO/
 
 # Base path for cosmo data
-cosmopath STRING $HOME/pyrad-examples/input_data/COSMO/
+cosmopath STRING ${PYRAD_EXAMPLES_PATH}/input_data/COSMO/
 
 # Loading of saved datasets
-loadbasepath STRING $HOME/pyrad-examples/input_data/MCH_HYDRO/
+loadbasepath STRING ${PYRAD_EXAMPLES_PATH}/input_data/MCH_HYDRO/
 loadname STRING  rad4alp_cosmotemp_PLL
 
 # --------------------------------------------
 # Output data
 # --------------------------------------------
-saveimgbasepath STRING $HOME/pyrad-examples/pyrad_products_test/
+saveimgbasepath STRING ${PYRAD_EXAMPLES_PATH}/pyrad_products_test/
 # Supported formats: eps, jpeg, jpg, pdf, pgf, png, ps, raw, rgba, svg, svgz, tif, tiff
 imgformat STRING png
 
@@ -30,11 +30,11 @@ imgformat STRING png
 # --------------------------------------------------------
 
 # Base path of configuration files
-configpath STRING $HOME/pyrad-examples/config/
+configpath STRING ${PYRAD_EXAMPLES_PATH}/config/
 
 # Configuration of the radar location and approach direction
-locationConfigFile STRING $HOME/pyrad-examples/config/processing/rad4alp_hydro_PLL_loc.txt
+locationConfigFile STRING ${PYRAD_EXAMPLES_PATH}/config/processing/rad4alp_hydro_PLL_loc.txt
 
 # Configuration of the product generation
-productConfigFile STRING $HOME/pyrad-examples/config/processing/rad4alp_hydro_PLL_prod.txt
+productConfigFile STRING ${PYRAD_EXAMPLES_PATH}/config/processing/rad4alp_hydro_PLL_prod.txt
 

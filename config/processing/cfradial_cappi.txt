@@ -6,10 +6,10 @@
 # call example:
 # If imported from source:
 # cd $HOME/pyrad/src/pyrad_proc/scripts/
-# python main_process_data.py cfradial_cappi.txt --starttime 20210114000000 --endtime 20210114000000 --cfgpath $HOME/pyrad-examples/config/processing/
+# python main_process_data.py cfradial_cappi.txt --starttime 20210114000000 --endtime 20210114000000 --cfgpath ${PYRAD_EXAMPLES_PATH}/config/processing/
 #
 # If used as a software package:
-# main_process_data.py cfradial_cappi.txt --starttime 20210114000000 --endtime 20210114000000 --cfgpath $HOME/pyrad-examples/config/processing/
+# main_process_data.py cfradial_cappi.txt --starttime 20210114000000 --endtime 20210114000000 --cfgpath ${PYRAD_EXAMPLES_PATH}/config/processing/
 
 
 # Name of this configuration:
@@ -21,14 +21,14 @@ name STRING CFRADIAL
 # ---------------------------------------------------------
 
 # Loading of saved datasets
-loadbasepath STRING $HOME/pyrad-examples/input_data/
+loadbasepath STRING ${PYRAD_EXAMPLES_PATH}/input_data/
 loadname STRING CFRADIAL
 
 
 # --------------------------------------------
 # Output data
 # -----------------------------------------------
-saveimgbasepath STRING $HOME/pyrad-examples/pyrad_products_test/
+saveimgbasepath STRING ${PYRAD_EXAMPLES_PATH}/pyrad_products_test/
 
 # Output image format can be any accepted by Matplotlib
 # More than one output formats can be set
@@ -40,10 +40,10 @@ imgformat STRARR 1
 # --------------------------------------------------------
 
 # Base path of configuration files
-configpath STRING $HOME/pyrad-examples/config/
+configpath STRING ${PYRAD_EXAMPLES_PATH}/config/
 
 # Configuration of the radar location and approach direction
-locationConfigFile STRING $HOME/pyrad-examples/config/processing/cfradial_cappi_loc.txt
+locationConfigFile STRING ${PYRAD_EXAMPLES_PATH}/config/processing/cfradial_cappi_loc.txt
 
 # Configuration of the product generation
-productConfigFile STRING $HOME/pyrad-examples/config/processing/cfradial_cappi_prod.txt
+productConfigFile STRING ${PYRAD_EXAMPLES_PATH}/config/processing/cfradial_cappi_prod.txt
