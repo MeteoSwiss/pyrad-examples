@@ -28,7 +28,7 @@ path_convention STRING ODIM
 cosmopath STRING ${PYRAD_EXAMPLES_PATH}/input_data/MF_ISO0/
 
 # Loading of saved datasets
-loadbasepath STRING STRING HOME/pyrad-examples/pyrad_products_test/
+loadbasepath STRING ${PYRAD_EXAMPLES_PATH}/pyrad_products_test/
 loadname STRING MF_ODIM_MTCY
 
 
